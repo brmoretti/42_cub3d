@@ -6,7 +6,7 @@
 /*   By: brmoretti <brmoretti@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 22:38:52 by brmoretti         #+#    #+#             */
-/*   Updated: 2024/03/25 10:23:11 by vde-frei         ###   ########.fr       */
+/*   Updated: 2024/03/25 11:37:38 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,6 @@ typedef struct s_level
 	size_t	y_size;
 }	t_level;
 
-typedef struct s_minimap
-{
-	mlx_image_t	*wall;
-	mlx_image_t	*floor;
-	mlx_image_t	*player;
-	int			side;
-	int			border;
-}	t_minimap;
-
 typedef struct s_player
 {
 	double	pos_x;
@@ -113,7 +104,6 @@ typedef struct s_cub
 {
 	mlx_t		*mlx;
 	t_level		level;
-	t_minimap	mini;
 	t_player	player;
 	t_plane		plane;
 	t_render	*render;
@@ -134,7 +124,6 @@ enum	e_side
 };
 
 void		import(int argc, char *argv[], t_level *lvl);
-void		minimap(t_cub *cub);
 t_ray		*raycasting(t_cub *cub, int ray_index);
 void		render_init(t_cub *cub);
 void		render(t_cub *cub);
