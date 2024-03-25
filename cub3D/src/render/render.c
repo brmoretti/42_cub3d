@@ -6,11 +6,12 @@
 /*   By: brmoretti <brmoretti@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:29:07 by bmoretti          #+#    #+#             */
-/*   Updated: 2024/03/23 11:32:22 by brmoretti        ###   ########.fr       */
+/*   Updated: 2024/03/25 19:30:36 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "render.h"
+#include "MLX42.h"
 
 void	mock_define_color(uint32_t *color, t_ray *ray)
 {
@@ -36,17 +37,26 @@ void	destroy_box(t_cub *cub, int index)
 	}
 }
 
+// start of texture functions
+// void	craft_texture(t_cub *cub)
+// {
+//
+// }
+
 void	render_box(t_cub *cub, t_ray *ray, int box_height)
 {
 	uint32_t	color;
 	mlx_image_t	**img;
 	uint32_t	x;
 	uint32_t	y;
+	mlx_texture_t	*texture;
 
 	mock_define_color(&color, ray);
 	img = &cub->render->boxes[ray->index];
 	destroy_box(cub, ray->index);
 	*img = mlx_new_image(cub->mlx, cub->render->width, box_height);
+	texture = mlx_load_png("./redbrick.png");
+	*img = mlx_texture_to_image(cub->mlx, texture);
 	rectangle_fill(*img, color);
 	x = ray->index * cub->render->width;
 	y = WINDOW_HEIGHT / 2 - box_height / 2;
