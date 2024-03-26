@@ -6,7 +6,7 @@
 /*   By: brmoretti <brmoretti@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 22:38:52 by brmoretti         #+#    #+#             */
-/*   Updated: 2024/03/25 11:37:38 by vde-frei         ###   ########.fr       */
+/*   Updated: 2024/03/26 18:09:52 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,13 @@
 # define GREEN 0x00ff00ff
 # define BLUE 0x0000ffff
 
+//TEXTURE
+# define TEX_H 64
+# define TEX_W 64
+
 # define FOV 0.66
 # define BOX_HEIGHT 150.0
+
 
 typedef struct s_level
 {
@@ -79,10 +84,11 @@ typedef struct s_plane
 
 typedef struct s_render
 {
-	int			width;
-	mlx_image_t	*floor;
-	mlx_image_t	*ceiling;
-	mlx_image_t	*boxes[N_RAYS];
+	int				width;
+	mlx_image_t		*floor;
+	mlx_image_t		*ceiling;
+	mlx_image_t		*boxes[N_RAYS];
+	mlx_texture_t	*tex[4];
 }	t_render;
 
 typedef struct s_ray
