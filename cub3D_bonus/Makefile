@@ -46,7 +46,6 @@ OBJS	 			=	$(SRCS:%.c=%.o)
 BUILDS				=	$(addprefix $(BUILD_DIR)/, $(OBJS))
 
 #≻───░⋆ ✪ LIBFT EXTRA ✪ ⋆░───────────────────────────────────────────────────≺#
-LIBFT_REPO			=	https://github.com/brmoretti/42_libft_extra.git
 LIBFT_LIB_NAME		=	libft.a
 LIBFT_DIR			=	libft
 LIBFT_INCLUDE_DIR	=	$(LIBFT_DIR)/include
@@ -57,7 +56,6 @@ LIBFT_CC			=	-I./$(LIBFT_INCLUDE_DIR)	\
 						$(LIBFT_LIBS)
 
 #≻───░⋆ ✪ MLX42 ✪ ⋆░─────────────────────────────────────────────────────────≺#
-MLX42_REPO			=	https://github.com/codam-coding-college/MLX42.git
 MLX42_LIB_NAME		=	libmlx42.a
 MLX42_DIR			=	MLX42
 MLX42_INCLUDE_DIR	=	$(MLX42_DIR)/include/MLX42
@@ -126,16 +124,8 @@ $(LIBFT_LIB): $(LIBFT_DIR)
 
 $(MLX42_LIB): $(MLX42_DIR)
 	@ cd $(MLX42_DIR) &&												\
-	  sed -i 's/cmake_minimum_required (VERSION 3.18.0)/				\
-	  	cmake_minimum_required (VERSION 3.16.0)/g' CMakeLists.txt && 	\
 	  cmake -B build &&													\
 	  cmake --build build -j4
-
-$(LIBFT_DIR):
-	@ git clone $(LIBFT_REPO) $(LIBFT_DIR)
-
-$(MLX42_DIR):
-	@ git clone $(MLX42_REPO) $(MLX42_DIR)
 
 clean_libft: $(LIBFT_DIR)
 	@ make -s -C $(LIBFT_DIR) clean
