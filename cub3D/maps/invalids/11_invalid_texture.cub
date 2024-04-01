@@ -1,0 +1,13 @@
+NO ./textures/wolfenstein3D/redbrick.pn
+SO ./textures/wolfenstein3D/colorstone.png
+WE ./textures/wolfenstein3D/greystone.png
+EA ./textures/wolfenstein3D/mossy.png
+
+F 100,100,100
+C 200,200,200
+
+111111
+100101
+101001
+1100N1
+111111

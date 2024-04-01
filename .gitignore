@@ -1,8 +1,5 @@
 *.pdf
-libft
-MLX42
 build
-cub3D
 cub3d_debug
 compile_commands.json
 .cache/
