@@ -6,7 +6,7 @@
 /*   By: bmoretti < bmoretti@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 22:38:52 by brmoretti         #+#    #+#             */
-/*   Updated: 2024/03/30 01:09:16 by vde-frei         ###   ########.fr       */
+/*   Updated: 2024/04/01 11:55:15 by vde-frei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@
 # define BOX_HEIGHT 150.0
 
 //TEXTURES
-# define DOOR_TEX "./textures/wolfenstein3D/door.png"
-# define KNIFE_TEX "./textures/wolfenstein3D/knifewalk.png"
-# define KNIFE_H_TEX "./textures/wolfenstein3D/knifehit.png"
+# define DOOR_TEX "./textures/wolfenstein3D/miscelaneous/door.png"
+# define KNIFE_TEX "./textures/wolfenstein3D/miscelaneous/knifewalk.png"
+# define KNIFE_H_TEX "./textures/wolfenstein3D/miscelaneous/knifehit.png"
 
 typedef struct s_weapon
 {

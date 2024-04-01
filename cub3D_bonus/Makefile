@@ -5,7 +5,7 @@ CC_FLAGS			=	-Wall		\
 						-Wextra		\
 						-Werror		\
 						-pedantic	\
-						-O3
+						-g3
 
 #≻───░⋆ ✪ PROJECT DIRECTORIES & FILES ✪ ⋆░───────────────────────────────────≺#
 SRC_DIR				=	src
